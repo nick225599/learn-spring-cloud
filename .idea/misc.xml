@@ -7,6 +7,16 @@
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/cloud-provider-payment8001/ear/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-provider-payment8001/ejbs/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-provider-payment8001/primary-source/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-provider-payment8001/projects/logging/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-provider-payment8001/projects/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-provider-payment8001/servlets/pom.xml" />
+      </set>
+    </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
