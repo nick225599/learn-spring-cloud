@@ -24,6 +24,8 @@ public class PaymentController {
         int i = paymentService.create(payment);
         log.info("PaymentController.create, i: {}", i);
         log.info("PaymentController.create, id: {}", payment.getId());
+        log.info("PaymentController.create, serialNo: {}", payment.getSerialNo());
+        log.info("PaymentController.create, serialNo: {}", payment.getSerialNo());
 
         CommonResult<Payment> result;
         if (i == 1) {
@@ -37,7 +39,8 @@ public class PaymentController {
     @GetMapping("/getBySerialNo/{serialNo}")
     public CommonResult<Payment> getBySerialNo(@PathVariable("serialNo") String serialNo) {
         Payment payment = paymentService.getBySerialNo(serialNo);
-
+        log.info("PaymentController.create, id: {}", payment.getId());
+        log.info("PaymentController.create, serialNo: {}", payment.getSerialNo());
         CommonResult<Payment> result;
         if (null != payment) {
             result = new CommonResult<>(200, "succsss", payment);
