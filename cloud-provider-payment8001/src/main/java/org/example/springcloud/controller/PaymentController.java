@@ -8,10 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController("/payment")
+@RestController
 @Slf4j
+@RequestMapping("/payment")
 public class PaymentController {
 
     @Autowired
@@ -19,11 +21,12 @@ public class PaymentController {
 
     @PostMapping("/create")
     public CommonResult<Payment> create(Payment payment) {
-        Integer id = paymentService.create(payment);
-        log.info("PaymentController.create, id: {}", id);
+        int i = paymentService.create(payment);
+        log.info("PaymentController.create, i: {}", i);
+        log.info("PaymentController.create, id: {}", payment.getId());
 
         CommonResult<Payment> result;
-        if (null != id) {
+        if (i == 1) {
             result = new CommonResult<>(200, "succsss", payment);
         } else {
             result = new CommonResult<>(500, "service error");
@@ -45,6 +48,6 @@ public class PaymentController {
 
     }
 
-    ;
+
 
 }
