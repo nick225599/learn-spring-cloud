@@ -21,6 +21,7 @@ public class PaymentController {
 
     @PostMapping("/create")
     public CommonResult<Payment> create(Payment payment) {
+        log.info("PaymentController.create, request: {}", payment);
         int i = paymentService.create(payment);
         log.info("PaymentController.create, i: {}", i);
         log.info("PaymentController.create, id: {}", payment.getId());
