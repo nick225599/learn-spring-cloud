@@ -6,7 +6,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.7.3</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
 
     <groupId>org.example</groupId>
@@ -24,10 +24,19 @@
         <mybatis.version>3.5.10</mybatis.version>
         <mybatis.starter.version>2.1.4</mybatis.starter.version>
         <cn.hutool.hutool-all.version>5.1.0</cn.hutool.hutool-all.version>
+        <spring-cloud.version>2021.0.3</spring-cloud.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
@@ -57,9 +66,14 @@
                 <artifactId>hutool-all</artifactId>
                 <version>${cn.hutool.hutool-all.version}</version>
             </dependency>
-        </dependencies>
-        </dependencyManagement>
 
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>cloud-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 
     <modules>
@@ -67,5 +81,6 @@
         <module>cloud-consumer-order80</module>
         <module>cloud-provider-payment8001</module>
         <module>cloud-provider-payment-facade</module>
+        <module>cloud-eureka-server7001</module>
     </modules>
 </project>
