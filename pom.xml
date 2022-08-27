@@ -49,7 +49,7 @@
             <dependency>
                 <groupId>org.example</groupId>
                 <artifactId>cloud-provider-payment-facade</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>${project.version}</version>
             </dependency>
 
             <dependency>
