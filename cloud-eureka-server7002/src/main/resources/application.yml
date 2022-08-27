@@ -1,15 +1,17 @@
 server:
   port: 7002
 
-spring:
-  application:
-    name: eureka-server-7002
+#spring:
+#  application:
+#    name: eureka-server-7002
 
 eureka:
   instance:
     hostname: eureka7002.scs.com
   client:
-    # registerWithEureka: false
-    # fetchRegistry: false
+    # false 表示不向注册中心注册自己
+    registerWithEureka: false
+    # false 表示自己就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+    fetchRegistry: false
     serviceUrl:
       defaultZone: http://eureka7001.scs.com:7001/eureka/
