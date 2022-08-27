@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,20 +21,16 @@ public class PaymentController {
     PaymentService paymentService;
 
     @PostMapping("/create")
-    public CommonResult<Payment> create(Payment payment) {
+    public CommonResult<Payment> create(@RequestBody Payment payment) {
         log.info("PaymentController.create, request: {}", payment);
         int i = paymentService.create(payment);
-        log.info("PaymentController.create, i: {}", i);
-        log.info("PaymentController.create, id: {}", payment.getId());
-        log.info("PaymentController.create, serialNo: {}", payment.getSerialNo());
-        log.info("PaymentController.create, serialNo: {}", payment.getSerialNo());
-
         CommonResult<Payment> result;
         if (i == 1) {
             result = new CommonResult<>(200, "succsss", payment);
         } else {
             result = new CommonResult<>(500, "service error");
         }
+        log.info("PaymentController.create, response: {}", result);
         return result;
     }
 
