@@ -1,23 +1,17 @@
 package org.example.springcloud.entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class CommonResult<T> {
     private String code;
     private String message;
     private CommonResultCodeEnum resultCodeEnum;
     private T data;
-
-    private CommonResult(String code,
-                         String message,
-                         CommonResultCodeEnum resultCodeEnum,
-                         T data) {
-        this.code = code;
-        this.message = message;
-        this.resultCodeEnum = resultCodeEnum;
-        this.data = data;
-    }
 
     public CommonResult(CommonResultCodeEnum resultCodeEnum) {
         this(resultCodeEnum, null);
