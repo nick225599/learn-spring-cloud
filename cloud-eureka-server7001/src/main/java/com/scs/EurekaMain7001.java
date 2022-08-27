@@ -1,4 +1,4 @@
-package com.scs.learn.spring.cloud.eurika.server;
+package com.scs;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,8 +6,8 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 @SpringBootApplication
 @EnableEurekaServer
-public class Main {
+public class EurekaMain7001 {
     public static void main(String[] args) {
-        SpringApplication.run(Main.class, args);
+        SpringApplication.run(EurekaMain7001.class, args);
     }
 }
