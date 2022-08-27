@@ -3,11 +3,13 @@ server:
 
 spring:
   application:
-    name: eureka-server-7001
+    name: eureka-server-7002
 
 eureka:
   instance:
     hostname: eureka7002.scs.com
   client:
+    # registerWithEureka: false
+    # fetchRegistry: false
     serviceUrl:
       defaultZone: http://eureka7001.scs.com:7001/eureka/
