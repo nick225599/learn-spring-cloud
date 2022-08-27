@@ -70,5 +70,6 @@
         <module>cloud-provider-payment8001</module>
         <module>cloud-consumer-order80</module>
         <module>cloud-provider-payment-facade</module>
+        <module>cloud-common</module>
     </modules>
 </project>
