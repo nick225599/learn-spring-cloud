@@ -6,8 +6,6 @@ spring:
     name: cloud-order-consumer
 
 eureka:
-  instance:
-    hostname: localhost
   client:
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:7001/eureka/
+      defaultZone: http://localhost:7001/eureka/

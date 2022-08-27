@@ -16,8 +16,6 @@ mybatis:
   type-aliases-package: com.example.springcloud.entities
 
 eureka:
-  instance:
-    hostname: localhost
   client:
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:7001/eureka/
+      defaultZone: http://localhost:7001/eureka/
