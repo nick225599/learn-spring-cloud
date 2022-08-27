@@ -1,4 +1,4 @@
-package org.example.springcloud.config;
+package org.example.springcloud.payment.order.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

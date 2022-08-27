@@ -1,12 +1,11 @@
-package org.example.springcloud.dao;
+package org.example.springcloud.payment.service;
 
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.example.springcloud.entities.Payment;
 
-@Mapper
-public interface PaymentDAO {
+public interface PaymentService {
     int create(Payment payment);
 
     Payment getBySerialNo(@Param("serialNo") String serialNo);
+
 }

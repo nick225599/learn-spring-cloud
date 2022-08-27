@@ -1,9 +1,10 @@
-package org.example.springcloud.controller;
+package org.example.springcloud.payment.order.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.springcloud.entities.CommonResult;
+import org.example.springcloud.entities.CommonResultCodeEnum;
 import org.example.springcloud.entities.Payment;
-import org.example.springcloud.service.PaymentService;
+import org.example.springcloud.payment.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,17 +19,17 @@ import org.springframework.web.bind.annotation.RestController;
 public class PaymentController {
 
     @Autowired
-    PaymentService paymentService;
+    private PaymentService paymentService;
 
     @PostMapping("/create")
     public CommonResult<Payment> create(@RequestBody Payment payment) {
         log.info("PaymentController.create, request: {}", payment);
         int i = paymentService.create(payment);
         CommonResult<Payment> result;
-        if (i == 1) {
-            result = new CommonResult<>(200, "succsss", payment);
+        if (1 == i) {
+            result = new CommonResult<>(CommonResultCodeEnum.SUCCESS, payment);
         } else {
-            result = new CommonResult<>(500, "service error");
+            result = new CommonResult<>(CommonResultCodeEnum.FAIL);
         }
         log.info("PaymentController.create, response: {}", result);
         return result;
@@ -36,14 +37,13 @@ public class PaymentController {
 
     @GetMapping("/getBySerialNo/{serialNo}")
     public CommonResult<Payment> getBySerialNo(@PathVariable("serialNo") String serialNo) {
+        log.info( "PaymentController.getBySerialNo, serialNo: {}", serialNo);
         Payment payment = paymentService.getBySerialNo(serialNo);
-        log.info("PaymentController.create, id: {}", payment.getId());
-        log.info("PaymentController.create, serialNo: {}", payment.getSerialNo());
         CommonResult<Payment> result;
         if (null != payment) {
-            result = new CommonResult<>(200, "succsss", payment);
+            result = new CommonResult<>(CommonResultCodeEnum.SUCCESS, payment);
         } else {
-            result = new CommonResult<>(500, "not such data");
+            result = new CommonResult<>(CommonResultCodeEnum.NOT_FOUND);
         }
         return result;
 

@@ -1,4 +1,4 @@
-package org.example.springcloud.controller;
+package org.example.springcloud.payment.order.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.springcloud.entities.CommonResult;
@@ -23,16 +23,20 @@ public class OrderController {
     private RestTemplate restTemplate;
 
     @GetMapping("/payment/create")
-    public CommonResult<Payment> create(Payment payment){
-        log.info("OrderController.create, request: {}" + payment);
-        CommonResult result = restTemplate.postForObject(URI.create(PAYMENT_URL + "/create"), payment, CommonResult.class);
-        log.info("OrderController.create, response: {}" + result);
+    @SuppressWarnings("unchecked")
+    public CommonResult<Payment> create(Payment payment) {
+        log.info("OrderController.create, request: {}" , payment);
+        URI url = URI.create(PAYMENT_URL + "/create");
+        CommonResult<Payment> result = restTemplate.postForObject(url, payment, CommonResult.class);
+        log.info("OrderController.create, response: {}" , result);
         return result;
     }
 
     @GetMapping("/payment/getBySerialNo/{serialNo}")
-    public CommonResult<Payment> getBySerialNo(@PathVariable("serialNo") String serialNo){
-        return restTemplate.getForObject(URI.create(PAYMENT_URL + "/getBySerialNo/" + serialNo), CommonResult.class);
+    @SuppressWarnings("unchecked")
+    public CommonResult<Payment> getBySerialNo(@PathVariable("serialNo") String serialNo) {
+        URI uri = URI.create(PAYMENT_URL + "/getBySerialNo/" + serialNo);
+        return restTemplate.getForObject(uri, CommonResult.class);
 
     }
 }
