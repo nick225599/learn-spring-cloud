@@ -1,11 +1,11 @@
-package org.example.springcloud.payment.order;
+package org.example.springcloud.payment;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OrderMain80 {
+public class Main {
     public static void main(String[] args) {
-        SpringApplication.run(OrderMain80.class, args);
+        SpringApplication.run(Main.class, args);
     }
 }

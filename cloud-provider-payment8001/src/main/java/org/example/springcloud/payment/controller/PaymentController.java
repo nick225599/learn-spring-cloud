@@ -1,4 +1,4 @@
-package org.example.springcloud.payment.order.controller;
+package org.example.springcloud.payment.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.springcloud.entities.CommonResult;
