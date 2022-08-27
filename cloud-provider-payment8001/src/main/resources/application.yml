@@ -17,7 +17,5 @@ mybatis:
 
 eureka:
   client:
-    # registerWithEureka: false
-    # fetchRegistry: false
     service-url:
-      defaultZone: http://localhost:7001/eureka/
+      defaultZone: http://eureka7001.scs.com:7001/eureka/,http://eureka7002.scs.com:7002/eureka/
