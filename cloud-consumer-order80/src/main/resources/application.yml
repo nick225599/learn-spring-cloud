@@ -9,3 +9,6 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka7001.scs.com:7001/eureka/,http://eureka7002.scs.com:7002/eureka/
+  instance:
+    instanceId: order80
+    preferIpAddress: true
