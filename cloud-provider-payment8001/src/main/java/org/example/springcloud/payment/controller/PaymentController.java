@@ -7,12 +7,16 @@ import org.example.springcloud.entities.Payment;
 import org.example.springcloud.payment.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @Slf4j
@@ -24,6 +28,9 @@ public class PaymentController {
 
     @Value("${server.port}")
     private String serverPort;
+
+    @Autowired
+    private DiscoveryClient discoveryClient;
 
     @PostMapping("/create")
     public CommonResult<Payment> create(@RequestBody Payment payment) {
@@ -41,7 +48,7 @@ public class PaymentController {
 
     @GetMapping("/getBySerialNo/{serialNo}")
     public CommonResult<String> getBySerialNo(@PathVariable("serialNo") String serialNo) {
-        log.info( "PaymentController.getBySerialNo, request: {}", serialNo);
+        log.info("PaymentController.getBySerialNo, request: {}", serialNo);
         Payment payment = paymentService.getBySerialNo(serialNo);
         CommonResult<String> result;
         if (null != payment) {
@@ -49,10 +56,24 @@ public class PaymentController {
         } else {
             result = new CommonResult<>(CommonResultCodeEnum.NOT_FOUND);
         }
-        log.info( "PaymentController.getBySerialNo, response: {}", result);
+        log.info("PaymentController.getBySerialNo, response: {}", result);
         return result;
     }
 
-
+    @GetMapping("/discovery")
+    public String discovery() {
+        log.info("discoveryClient.order: {}, description: {}", discoveryClient.getOrder(), discoveryClient.description());
+        List<String> services = discoveryClient.getServices();
+        for (String service : services) {
+            log.info("service: {}", service);
+            List<ServiceInstance> serviceInstances = discoveryClient.getInstances(service);
+            for (ServiceInstance serviceInstance : serviceInstances) {
+                log.info("service instance id: {}, metadata: {}, scheme: {}, host: {}, port: {}", serviceInstance.getInstanceId(), serviceInstance.getMetadata(), serviceInstance.getScheme(), serviceInstance.getHost(), serviceInstance.getPort());
+                log.info("");
+            }
+            log.info("");
+        }
+        return serverPort;
+    }
 
 }
