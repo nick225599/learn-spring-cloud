@@ -79,6 +79,7 @@
     <modules>
         <module>cloud-common</module>
         <module>cloud-consumer-order80</module>
+        <module>cloud-consumer-order80-zk</module>
         <module>cloud-provider-payment8001</module>
         <module>cloud-provider-payment8002</module>
         <module>cloud-provider-payment8004</module>
