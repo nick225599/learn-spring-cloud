@@ -18,7 +18,7 @@ import java.net.URI;
 public class OrderController {
 
 //    private static final String PAYMENT_URL = "http://localhost:8001/payment";
-    private static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE/payment";
+    private static final String PAYMENT_URL = "http://cloud-payment-service/payment";
 
     @Autowired
     private RestTemplate restTemplate;
@@ -41,9 +41,8 @@ public class OrderController {
     }
 
     @GetMapping("/discovery")
-    @SuppressWarnings("unchecked")
-    public CommonResult<Payment> discovery() {
+    public String discovery() {
         URI uri = URI.create(PAYMENT_URL + "/discovery/");
-        return restTemplate.getForObject(uri, CommonResult.class);
+        return restTemplate.getForObject(uri, String.class);
     }
 }
