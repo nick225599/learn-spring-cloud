@@ -1,4 +1,4 @@
-package org.example.springcloud.payment;
+package org.example.springcloud.payment.order;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,8 +6,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class Payment8006Consul {
+public class Order80Consul {
     public static void main(String[] args) {
-        SpringApplication.run(Payment8006Consul.class, args);
+        SpringApplication.run(Order80Consul.class, args);
     }
 }

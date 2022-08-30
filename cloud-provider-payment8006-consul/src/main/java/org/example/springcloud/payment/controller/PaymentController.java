@@ -74,7 +74,7 @@ public class PaymentController {
             }
             log.info("");
         }
-        return "spring cloud with zookeeper, port: " + serverPort + ", uuid: " + UUID.randomUUID();
+        return "spring cloud with consul, port: " + serverPort + ", uuid: " + UUID.randomUUID();
     }
 
 }

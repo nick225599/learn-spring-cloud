@@ -1,0 +1,9 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-order-consumer
+  cloud:
+    consul:
+      connectString: 127.0.0.1:8500
