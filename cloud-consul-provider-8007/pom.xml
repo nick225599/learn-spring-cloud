@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-consumer-consul80</artifactId>
+    <artifactId>cloud-consul-provider-8007</artifactId>
 
     <dependencies>
         <dependency>
@@ -36,10 +36,6 @@
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>cloud-provider-payment-facade</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
     </dependencies>
 </project>
