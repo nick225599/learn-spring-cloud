@@ -20,7 +20,7 @@ public class IndexController {
 
     @GetMapping("/echo/{msg}")
     public String echo(@PathVariable("msg") String msg) throws InterruptedException {
-        TimeUnit.MINUTES.sleep(1);
+        TimeUnit.SECONDS.sleep(5);
         return msg + ", server port: " + serverPort;
     }
 

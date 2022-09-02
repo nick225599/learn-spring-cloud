@@ -4,3 +4,7 @@ server:
 spring:
   application:
     name: consumer-consul
+
+logging:
+  level:
+    org.example.servers.EchoService: debug
