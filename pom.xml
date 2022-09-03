@@ -9,7 +9,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>org.example</groupId>
+    <groupId>org.scs.learn.spring</groupId>
     <artifactId>cloud2020</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -56,7 +56,7 @@
             </dependency>
 
             <dependency>
-                <groupId>org.example</groupId>
+                <groupId>org.scs.learn.spring</groupId>
                 <artifactId>cloud-provider-payment-facade</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -68,7 +68,7 @@
             </dependency>
 
             <dependency>
-                <groupId>org.example</groupId>
+                <groupId>org.scs.learn.spring</groupId>
                 <artifactId>cloud-common</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -91,5 +91,6 @@
         <module>cloud-consul-provider-8007</module>
         <module>cloud-consul-provider-8008</module>
         <module>cloud-consul-consumer-80</module>
+        <module>cloud-zk-provider-8001</module>
     </modules>
 </project>
