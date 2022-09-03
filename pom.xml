@@ -91,6 +91,8 @@
         <module>cloud-consul-provider-8007</module>
         <module>cloud-consul-provider-8008</module>
         <module>cloud-consul-consumer-80</module>
-        <module>cloud-zk-provider-8001</module>
+        <module>cloud-zk-provider8001</module>
+        <module>cloud-zk-provider8002</module>
+        <module>cloud-zk-consumer80</module>
     </modules>
 </project>
