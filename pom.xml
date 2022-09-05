@@ -95,5 +95,7 @@
         <module>cloud-zk-provider8002</module>
         <module>cloud-zk-consumer80</module>
         <module>cloud-zk-monitor9001</module>
+        <module>_01_gateway_9527_over_consul</module>
+        <module>_02_provider_8001_over_consul</module>
     </modules>
 </project>
