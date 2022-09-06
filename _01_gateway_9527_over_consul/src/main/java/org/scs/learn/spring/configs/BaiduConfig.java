@@ -16,4 +16,14 @@ public class BaiduConfig {
 
         return routes.build();
     }
+
+    @Bean
+    public RouteLocator serverPort(RouteLocatorBuilder builder) {
+        RouteLocatorBuilder.Builder routes = builder.routes();
+
+        routes.route("serverPort", r -> r.path("/server/port")
+                .uri("lb://provider"));
+
+        return routes.build();
+    }
 }

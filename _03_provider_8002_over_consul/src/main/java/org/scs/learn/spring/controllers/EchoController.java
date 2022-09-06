@@ -9,16 +9,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Slf4j
 public class EchoController {
+
     @Value("${server.port}")
     private String serverPort;
 
     @GetMapping("/provider/echo/{msg}")
-    public String echo(@PathVariable("msg") String msg) {
+    public String echo(@PathVariable("msg") String msg){
         return msg;
     }
 
     @GetMapping("/server/port")
-    public String serverPort() {
+    public String serverPort(){
         return serverPort;
     }
 }

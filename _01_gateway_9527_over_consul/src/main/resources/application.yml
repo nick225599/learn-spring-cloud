@@ -6,6 +6,9 @@ spring:
     name: gateway
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: true
       routes:
         - id: payment01
           uri: http://localhost:8001
