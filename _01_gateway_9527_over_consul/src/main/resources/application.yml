@@ -4,3 +4,10 @@ server:
 spring:
   application:
     name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: payment01
+          uri: http://localhost:8001
+          predicates:
+            - Path=/provider/echo/**
