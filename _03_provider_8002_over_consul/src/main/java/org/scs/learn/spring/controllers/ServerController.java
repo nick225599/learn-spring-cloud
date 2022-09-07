@@ -1,18 +1,20 @@
 package org.scs.learn.spring.controllers;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Slf4j
-@RequestMapping("/echo")
-public class EchoController {
+@RequestMapping("/server")
+public class ServerController {
+    @Value("${server.port}")
+    private String serverPort;
 
-    @GetMapping("/{msg}")
-    public String echo(@PathVariable("msg") String msg) {
-        return msg;
+    @GetMapping("/port")
+    public String serverPort() {
+        return serverPort;
     }
 }

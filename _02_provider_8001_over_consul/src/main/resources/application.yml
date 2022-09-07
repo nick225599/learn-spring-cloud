@@ -4,4 +4,4 @@ server:
 
 spring:
   application:
-    name: provider
+    name: server_over_consul
