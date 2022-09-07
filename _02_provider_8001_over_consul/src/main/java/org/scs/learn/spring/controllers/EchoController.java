@@ -12,12 +12,12 @@ public class EchoController {
     @Value("${server.port}")
     private String serverPort;
 
-    @GetMapping("/provider/echo/{msg}")
+    @GetMapping("/temp/echo/{msg}")
     public String echo(@PathVariable("msg") String msg) {
         return msg;
     }
 
-    @GetMapping("/server/port")
+    @GetMapping("/temp/server/port")
     public String serverPort() {
         return serverPort;
     }

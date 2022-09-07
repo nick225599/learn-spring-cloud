@@ -1,6 +1,13 @@
 server:
   port: 9527
 
+logging:
+  level:
+    org.springframework.cloud.gateway: trace
+    org.springframework.http.server.reactive: trace
+    org.springframework.web.reactive: trace
+    org.springframework.boot.autoconfigure.web: trace
+
 spring:
   application:
     name: gateway
@@ -9,8 +16,3 @@ spring:
       discovery:
         locator:
           enabled: true
-      routes:
-        - id: payment01
-          uri: http://localhost:8001
-          predicates:
-            - Path=/provider/echo/**
