@@ -36,3 +36,9 @@ spring:
           predicates:
             - Path=/echo/**
             - Before=2000-09-07T22:33:30.000+08:00[Asia/Shanghai]
+
+        # path2
+        - id: route_004
+          uri: http://news.baidu.com
+          predicates:
+            - Path=/guonei/**
