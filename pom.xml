@@ -25,6 +25,7 @@
         <mybatis.starter.version>2.1.4</mybatis.starter.version>
         <cn.hutool.hutool-all.version>5.1.0</cn.hutool.hutool-all.version>
         <spring-cloud.version>2021.0.3</spring-cloud.version>
+        <dubbo.version>3.0.10</dubbo.version>
     </properties>
 
     <dependencyManagement>
@@ -72,6 +73,12 @@
                 <artifactId>cloud-common</artifactId>
                 <version>${project.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -98,5 +105,24 @@
         <module>_01_gateway_9527_over_consul</module>
         <module>_02_provider_8001_over_consul</module>
         <module>_03_provider_8002_over_consul</module>
+        <module>_04_learn_dubbo_providor</module>
+        <module>_05_learn_dubbo_consumer</module>
     </modules>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <layout>default</layout>
+            <!-- 是否开启发布版构件下载 -->
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <!-- 是否开启快照版构件下载 -->
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>
