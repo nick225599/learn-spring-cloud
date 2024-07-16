@@ -1,128 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.3</version>
-        <relativePath/>
+        <version>3.3.1</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
-
-    <groupId>org.scs.learn.spring</groupId>
-    <artifactId>cloud2020</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>org.scs.learn</groupId>
+    <artifactId>learn-spring-cloud</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
-
-        <druid.version>1.2.6</druid.version>
-        <mybatis.version>3.5.10</mybatis.version>
-        <mybatis.starter.version>2.1.4</mybatis.starter.version>
-        <cn.hutool.hutool-all.version>5.1.0</cn.hutool.hutool-all.version>
-        <spring-cloud.version>2021.0.3</spring-cloud.version>
-        <dubbo.version>3.0.10</dubbo.version>
+        <java.version>22</java.version>
     </properties>
 
     <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
 
-            <dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>${mybatis.starter.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>druid</artifactId>
-                <version>${druid.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.mybatis</groupId>
-                <artifactId>mybatis</artifactId>
-                <version>${mybatis.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.scs.learn.spring</groupId>
-                <artifactId>cloud-provider-payment-facade</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>cn.hutool</groupId>
-                <artifactId>hutool-all</artifactId>
-                <version>${cn.hutool.hutool-all.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.scs.learn.spring</groupId>
-                <artifactId>cloud-common</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo</artifactId>
-                <version>${dubbo.version}</version>
-            </dependency>
-        </dependencies>
     </dependencyManagement>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
-    <modules>
-        <module>cloud-common</module>
-        <module>cloud-consumer-order80-zk</module>
-        <module>cloud-consumer-order80-eureka</module>
-        <module>cloud-consumer-order80-consul</module>
-        <module>cloud-provider-payment8001-eureka</module>
-        <module>cloud-provider-payment8002-eureka</module>
-        <module>cloud-provider-payment8004-zk</module>
-        <module>cloud-provider-payment8006-consul</module>
-        <module>cloud-provider-payment-facade</module>
-        <module>cloud-eureka-server7001</module>
-        <module>cloud-eureka-server7002</module>
-        <module>cloud-consul-provider-8007</module>
-        <module>cloud-consul-provider-8008</module>
-        <module>cloud-consul-consumer-80</module>
-        <module>cloud-zk-provider8001</module>
-        <module>cloud-zk-provider8002</module>
-        <module>cloud-zk-consumer80</module>
-        <module>cloud-zk-monitor9001</module>
-        <module>_01_gateway_9527_over_consul</module>
-        <module>_02_provider_8001_over_consul</module>
-        <module>_03_provider_8002_over_consul</module>
-        <module>_04_learn_dubbo_providor</module>
-        <module>_05_learn_dubbo_consumer</module>
-    </modules>
-
-    <repositories>
-        <repository>
-            <id>central</id>
-            <name>aliyun maven</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-            <layout>default</layout>
-            <!-- 是否开启发布版构件下载 -->
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <!-- 是否开启快照版构件下载 -->
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
 </project>

@@ -1,7 +1,0 @@
-server:
-  port:
-    8008
-
-spring:
-  application:
-    name: provider-consul

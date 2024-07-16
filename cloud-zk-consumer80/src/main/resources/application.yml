@@ -1,7 +1,0 @@
-server:
-  port:
-    80
-
-spring:
-  application:
-    name: zk-consumer

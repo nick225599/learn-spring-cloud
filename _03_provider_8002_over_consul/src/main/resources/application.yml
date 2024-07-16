@@ -1,7 +1,0 @@
-server:
-  port:
-    8002
-
-spring:
-  application:
-    name: server_over_consul
